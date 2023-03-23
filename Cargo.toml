@@ -1,5 +1,5 @@
 [package]
-name = "openapi"
+name = "kubevela"
 version = "1.0.0"
 authors = ["feedback@mail.kubevela.io"]
 description = "Kubevela api doc"
