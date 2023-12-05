@@ -9,9 +9,23 @@ brew install openapi-generator
 ```
 
 ```bash
-openapi-generator generate -i ./spec/kubevela.yaml -g rust -o .
+openapi-generator generate --package-name kubevela --input-spec ./spec/kubevela.json --generator-name rust --output .
 
 # Incase of errors
-openapi-generator generate --skip-validate-spec -i ./spec/kubevela.yaml -g rust -o .
+openapi-generator generate \
+--skip-validate-spec \
+--package-name kubevela \
+--input-spec ./spec/kubevela.json \
+--generator-name rust \
+--output .
+
+# Differences 
+openapi-generator generate \
+--minimal-update \
+--skip-validate-spec \
+--package-name kubevela \
+--input-spec ./spec/kubevela.json \
+--generator-name rust \
+--output .
 
 ```

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **platform_permissions** | [**Vec<crate::models::V1PeriodPermissionBase>**](v1.PermissionBase.md) |  | 
 **project_permissions** | [**::std::collections::HashMap<String, Vec<crate::models::V1PeriodPermissionBase>>**](array.md) |  | 
-**projects** | [**Vec<crate::models::V1PeriodProjectBase>**](v1.ProjectBase.md) |  | 
+**projects** | [**Vec<crate::models::V1PeriodUserProjectBase>**](v1.UserProjectBase.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

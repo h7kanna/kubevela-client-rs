@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alias** | **String** |  | 
+**annotations** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
 **create_time** | **String** |  | 
 **description** | **String** |  | 
 **icon** | **String** |  | 

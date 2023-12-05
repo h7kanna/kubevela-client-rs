@@ -1,6 +1,6 @@
 # \CloudshellApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,7 +38,7 @@ No authorization required
 
 ## prepare_cloud_shell
 
-> crate::models::V1PeriodSimpleResponse prepare_cloud_shell()
+> crate::models::V1PeriodCloudShellPrepareResponse prepare_cloud_shell()
 prepare the user's cloud shell environment
 
 ### Parameters
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodCloudShellPrepareResponse**](v1.CloudShellPrepareResponse.md)
 
 ### Authorization
 

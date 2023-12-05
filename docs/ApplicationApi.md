@@ -1,6 +1,6 @@
 # \ApplicationApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**delete_application_trait**](ApplicationApi.md#delete_application_trait) | **DELETE** /api/v1/applications/{appName}/components/{compName}/traits/{traitType} | delete trait from a component
 [**delete_application_trigger**](ApplicationApi.md#delete_application_trigger) | **DELETE** /api/v1/applications/{appName}/triggers/{token} | Delete an application trigger
 [**delete_component**](ApplicationApi.md#delete_component) | **DELETE** /api/v1/applications/{appName}/components/{compName} | delete a component
-[**delete_workflow**](ApplicationApi.md#delete_workflow) | **DELETE** /api/v1/applications/{appName}/workflows/{workflowName} | deletet workflow
+[**delete_workflow**](ApplicationApi.md#delete_workflow) | **DELETE** /api/v1/applications/{appName}/workflows/{workflowName} | delete workflow
 [**deploy_application**](ApplicationApi.md#deploy_application) | **POST** /api/v1/applications/{appName}/deploy | deploy or upgrade the application
 [**detail_application**](ApplicationApi.md#detail_application) | **GET** /api/v1/applications/{appName} | detail one application 
 [**detail_application_policy**](ApplicationApi.md#detail_application_policy) | **GET** /api/v1/applications/{appName}/policies/{policyName} | detail policy for application
@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**detail_workflow_record**](ApplicationApi.md#detail_workflow_record) | **GET** /api/v1/applications/{appName}/workflows/{workflowName}/records/{record} | query application workflow execution record detail
 [**dry_run_app_or_revision**](ApplicationApi.md#dry_run_app_or_revision) | **POST** /api/v1/applications/{appName}/dry-run | dry-run application to latest revision
 [**get_application_status**](ApplicationApi.md#get_application_status) | **GET** /api/v1/applications/{appName}/envs/{envName}/status | get application status
+[**get_application_status_from_all_envs**](ApplicationApi.md#get_application_status_from_all_envs) | **GET** /api/v1/applications/{appName}/status | get application status from all envs
 [**get_workflow_record_inputs**](ApplicationApi.md#get_workflow_record_inputs) | **GET** /api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/inputs | get the workflow step inputs
 [**get_workflow_record_logs**](ApplicationApi.md#get_workflow_record_logs) | **GET** /api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/logs | get the workflow step logs
 [**get_workflow_record_outputs**](ApplicationApi.md#get_workflow_record_outputs) | **GET** /api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/outputs | get the workflow step inputs
@@ -41,6 +42,7 @@ Method | HTTP request | Description
 [**list_application_workflows**](ApplicationApi.md#list_application_workflows) | **GET** /api/v1/applications/{appName}/workflows | list application workflow
 [**list_applications**](ApplicationApi.md#list_applications) | **GET** /api/v1/applications | list all applications
 [**list_workflow_records**](ApplicationApi.md#list_workflow_records) | **GET** /api/v1/applications/{appName}/workflows/{workflowName}/records | query application workflow execution record
+[**list_workflow_records_from_env**](ApplicationApi.md#list_workflow_records_from_env) | **GET** /api/v1/applications/{appName}/envs/{envName}/records | query application workflow execution record of one environment
 [**publish_application_template**](ApplicationApi.md#publish_application_template) | **POST** /api/v1/applications/{appName}/template | create one application template
 [**recycle_application_env**](ApplicationApi.md#recycle_application_env) | **POST** /api/v1/applications/{appName}/envs/{envName}/recycle | recycle application env
 [**reset_app_to_latest_revision**](ApplicationApi.md#reset_app_to_latest_revision) | **POST** /api/v1/applications/{appName}/reset | reset application to latest revision
@@ -291,7 +293,7 @@ No authorization required
 
 ## create_or_update_application_workflow
 
-> crate::models::V1PeriodSimpleResponse create_or_update_application_workflow(app_name, body)
+> crate::models::V1PeriodDetailWorkflowResponse create_or_update_application_workflow(app_name, body)
 create application workflow
 
 ### Parameters
@@ -304,7 +306,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailWorkflowResponse**](v1.DetailWorkflowResponse.md)
 
 ### Authorization
 
@@ -496,7 +498,7 @@ No authorization required
 ## delete_workflow
 
 > crate::models::V1PeriodSimpleResponse delete_workflow(app_name, workflow_name)
-deletet workflow
+delete workflow
 
 ### Parameters
 
@@ -668,7 +670,7 @@ No authorization required
 
 ## detail_workflow
 
-> crate::models::V1PeriodSimpleResponse detail_workflow(app_name, workflow_name)
+> crate::models::V1PeriodDetailWorkflowResponse detail_workflow(app_name, workflow_name)
 detail application workflow
 
 ### Parameters
@@ -677,11 +679,11 @@ detail application workflow
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **app_name** | **String** | identifier of the application. | [required] |
-**workflow_name** | **String** | identifier of the workfloc. | [required] |
+**workflow_name** | **String** | identifier of the workflow. | [required] |
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailWorkflowResponse**](v1.DetailWorkflowResponse.md)
 
 ### Authorization
 
@@ -697,7 +699,7 @@ No authorization required
 
 ## detail_workflow_record
 
-> crate::models::V1PeriodSimpleResponse detail_workflow_record(app_name, workflow_name, record)
+> crate::models::V1PeriodDetailWorkflowRecordResponse detail_workflow_record(app_name, workflow_name, record)
 query application workflow execution record detail
 
 ### Parameters
@@ -711,7 +713,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailWorkflowRecordResponse**](v1.DetailWorkflowRecordResponse.md)
 
 ### Authorization
 
@@ -770,6 +772,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**crate::models::V1PeriodApplicationStatusResponse**](v1.ApplicationStatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_application_status_from_all_envs
+
+> crate::models::V1PeriodApplicationStatusListResponse get_application_status_from_all_envs(app_name)
+get application status from all envs
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_name** | **String** | identifier of the application  | [required] |
+
+### Return type
+
+[**crate::models::V1PeriodApplicationStatusListResponse**](v1.ApplicationStatusListResponse.md)
 
 ### Authorization
 
@@ -1051,7 +1081,7 @@ No authorization required
 
 ## list_application_workflows
 
-> crate::models::V1PeriodSimpleResponse list_application_workflows(app_name)
+> crate::models::V1PeriodListWorkflowResponse list_application_workflows(app_name)
 list application workflow
 
 ### Parameters
@@ -1063,7 +1093,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodListWorkflowResponse**](v1.ListWorkflowResponse.md)
 
 ### Authorization
 
@@ -1110,7 +1140,7 @@ No authorization required
 
 ## list_workflow_records
 
-> crate::models::V1PeriodSimpleResponse list_workflow_records(app_name, workflow_name, page, page_size)
+> crate::models::V1PeriodListWorkflowRecordsResponse list_workflow_records(app_name, workflow_name, page, page_size)
 query application workflow execution record
 
 ### Parameters
@@ -1125,7 +1155,38 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodListWorkflowRecordsResponse**](v1.ListWorkflowRecordsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## list_workflow_records_from_env
+
+> crate::models::V1PeriodListWorkflowRecordsResponse list_workflow_records_from_env(app_name, env_name, page, page_size)
+query application workflow execution record of one environment
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_name** | **String** | identifier of the application. | [required] |
+**env_name** | **String** | identifier of the environment. | [required] |
+**page** | Option<**i32**> | query the page number |  |
+**page_size** | Option<**i32**> | query the page size number |  |
+
+### Return type
+
+[**crate::models::V1PeriodListWorkflowRecordsResponse**](v1.ListWorkflowRecordsResponse.md)
 
 ### Authorization
 
@@ -1527,7 +1588,7 @@ No authorization required
 
 ## update_workflow
 
-> crate::models::V1PeriodSimpleResponse update_workflow(app_name, workflow_name, body)
+> crate::models::V1PeriodDetailWorkflowResponse update_workflow(app_name, workflow_name, body)
 update application workflow config
 
 ### Parameters
@@ -1541,7 +1602,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailWorkflowResponse**](v1.DetailWorkflowResponse.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **last_login_time** | **String** |  | 
 **name** | **String** |  | 
-**projects** | [**Vec<crate::models::V1PeriodProjectBase>**](v1.ProjectBase.md) |  | 
+**projects** | [**Vec<crate::models::V1PeriodUserProjectBase>**](v1.UserProjectBase.md) |  | 
 **roles** | [**Vec<crate::models::V1PeriodNameAlias>**](v1.NameAlias.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

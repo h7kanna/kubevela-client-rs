@@ -1,6 +1,6 @@
 # \ClusterApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -309,7 +309,7 @@ No authorization required
 
 ## list_kube_clusters
 
-> crate::models::V1PeriodSimpleResponse list_kube_clusters(query, page, page_size)
+> crate::models::V1PeriodListClusterResponse list_kube_clusters(query, page, page_size)
 list all clusters
 
 ### Parameters
@@ -323,7 +323,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodListClusterResponse**](v1.ListClusterResponse.md)
 
 ### Authorization
 

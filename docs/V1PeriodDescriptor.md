@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **annotations** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
+**artifact_type** | Option<**String**> |  | [optional]
 **data** | Option<**String**> |  | [optional]
 **digest** | **String** |  | 
 **media_type** | **String** |  | 

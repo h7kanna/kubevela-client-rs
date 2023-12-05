@@ -1,6 +1,6 @@
 # \DefinitionApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## detail_definition
 
-> crate::models::V1PeriodSimpleResponse detail_definition(definition_name, r#type)
+> crate::models::V1PeriodDetailDefinitionResponse detail_definition(definition_name, r#type)
 Detail a definition
 
 ### Parameters
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailDefinitionResponse**](v1.DetailDefinitionResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## list_definitions
 
-> crate::models::V1PeriodSimpleResponse list_definitions(r#type, query_all, applied_workload, owner_addon, scope)
+> crate::models::V1PeriodListDefinitionResponse list_definitions(r#type, query_all, applied_workload, owner_addon, scope)
 list all definitions
 
 ### Parameters
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodListDefinitionResponse**](v1.ListDefinitionResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ No authorization required
 
 ## update_definition_status
 
-> crate::models::V1PeriodSimpleResponse update_definition_status(definition_name, body)
+> Vec<serde_json::Value> update_definition_status(definition_name, body)
 Update the status for a definition
 
 ### Parameters
@@ -87,7 +87,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**Vec<serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ No authorization required
 
 ## update_ui_schema
 
-> crate::models::V1PeriodSimpleResponse update_ui_schema(definition_name, body)
+> Vec<serde_json::Value> update_ui_schema(definition_name, body)
 Update the UI schema for a definition
 
 ### Parameters
@@ -116,7 +116,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**Vec<serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 

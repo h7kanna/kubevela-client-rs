@@ -1,6 +1,6 @@
 # \HelmApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## chart_values
 
-> String chart_values(chart, version, repo_url, repo_type, secret_name)
+> String chart_values(project, chart, version, repo_url, repo_type, secret_name)
 get chart value
 
 ### Parameters
@@ -25,6 +25,7 @@ get chart value
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**project** | **String** | the config project | [required] |
 **chart** | **String** | helm chart | [required] |
 **version** | **String** | helm chart version | [required] |
 **repo_url** | **String** | helm repository url | [required] |
@@ -49,7 +50,7 @@ No authorization required
 
 ## get_chart_values
 
-> serde_json::Value get_chart_values(chart, version, repo_url, secret_name)
+> serde_json::Value get_chart_values(project, chart, version, repo_url, secret_name)
 get chart value
 
 ### Parameters
@@ -57,6 +58,7 @@ get chart value
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**project** | **String** | the config project | [required] |
 **chart** | **String** | identifier of the helm chart | [required] |
 **version** | **String** | version of the helm chart | [required] |
 **repo_url** | Option<**String**> | helm repository url |  |
@@ -138,7 +140,7 @@ No authorization required
 
 ## list_chart_versions
 
-> crate::models::V1PeriodChartVersionListResponse list_chart_versions(chart, repo_url, secret_name)
+> crate::models::V1PeriodChartVersionListResponse list_chart_versions(project, chart, repo_url, secret_name)
 list versions
 
 ### Parameters
@@ -146,6 +148,7 @@ list versions
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**project** | **String** | the config project | [required] |
 **chart** | **String** | identifier of the helm chart | [required] |
 **repo_url** | Option<**String**> | helm repository url |  |
 **secret_name** | Option<**String**> | secret of the repo |  |
@@ -168,7 +171,7 @@ No authorization required
 
 ## list_charts
 
-> Vec<String> list_charts(repo_url, secret_name)
+> Vec<String> list_charts(project, repo_url, secret_name)
 list charts
 
 ### Parameters
@@ -176,6 +179,7 @@ list charts
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**project** | **String** | the config project | [required] |
 **repo_url** | Option<**String**> | helm repository url |  |
 **secret_name** | Option<**String**> | secret of the repo |  |
 
@@ -225,7 +229,7 @@ No authorization required
 
 ## list_versions_from_query
 
-> crate::models::V1PeriodChartVersionListResponse list_versions_from_query(chart, repo_url, secret_name)
+> crate::models::V1PeriodChartVersionListResponse list_versions_from_query(project, chart, repo_url, secret_name)
 list versions
 
 ### Parameters
@@ -233,6 +237,7 @@ list versions
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**project** | **String** | the config project | [required] |
 **chart** | **String** | helm chart | [required] |
 **repo_url** | **String** | helm repository url | [required] |
 **secret_name** | Option<**String**> | secret of the repo |  |

@@ -1,11 +1,11 @@
 # \TargetApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_target**](TargetApi.md#create_target) | **POST** /api/v1/targets | create Target
-[**delete_target**](TargetApi.md#delete_target) | **DELETE** /api/v1/targets/{targetName} | deletet Target
+[**delete_target**](TargetApi.md#delete_target) | **DELETE** /api/v1/targets/{targetName} | delete Target
 [**detail_target**](TargetApi.md#detail_target) | **GET** /api/v1/targets/{targetName} | detail Target
 [**list_targets**](TargetApi.md#list_targets) | **GET** /api/v1/targets | list Target
 [**update_target**](TargetApi.md#update_target) | **PUT** /api/v1/targets/{targetName} | update application Target config
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## create_target
 
-> crate::models::V1PeriodSimpleResponse create_target(body)
+> crate::models::V1PeriodDetailTargetResponse create_target(body)
 create Target
 
 ### Parameters
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailTargetResponse**](v1.DetailTargetResponse.md)
 
 ### Authorization
 
@@ -43,7 +43,7 @@ No authorization required
 ## delete_target
 
 > crate::models::V1PeriodSimpleResponse delete_target(target_name)
-deletet Target
+delete Target
 
 ### Parameters
 
@@ -70,7 +70,7 @@ No authorization required
 
 ## detail_target
 
-> crate::models::V1PeriodSimpleResponse detail_target(target_name)
+> crate::models::V1PeriodDetailTargetResponse detail_target(target_name)
 detail Target
 
 ### Parameters
@@ -82,7 +82,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailTargetResponse**](v1.DetailTargetResponse.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ No authorization required
 
 ## list_targets
 
-> crate::models::V1PeriodSimpleResponse list_targets(page, page_size, project)
+> crate::models::V1PeriodListTargetResponse list_targets(page, page_size, project)
 list Target
 
 ### Parameters
@@ -112,7 +112,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodListTargetResponse**](v1.ListTargetResponse.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ No authorization required
 
 ## update_target
 
-> crate::models::V1PeriodSimpleResponse update_target(target_name, body)
+> crate::models::V1PeriodDetailTargetResponse update_target(target_name, body)
 update application Target config
 
 ### Parameters
@@ -141,7 +141,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::V1PeriodSimpleResponse**](v1.SimpleResponse.md)
+[**crate::models::V1PeriodDetailTargetResponse**](v1.DetailTargetResponse.md)
 
 ### Authorization
 

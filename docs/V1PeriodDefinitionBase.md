@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alias** | **String** |  | 
+**category** | **String** |  | 
 **component** | Option<[**crate::models::V1beta1PeriodComponentDefinitionSpec**](v1beta1.ComponentDefinitionSpec.md)> |  | [optional]
 **description** | **String** |  | 
 **icon** | **String** |  | 

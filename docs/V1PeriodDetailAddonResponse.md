@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**annotations** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
 **available_versions** | **Vec<String>** |  | 
 **definitions** | [**Vec<crate::models::V1PeriodAddonDefinition>**](v1.AddonDefinition.md) |  | 
 **dependencies** | Option<[**Vec<crate::models::AddonPeriodDependency>**](addon.Dependency.md)> |  | [optional]
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **tags** | Option<**Vec<String>**> |  | [optional]
 **ui_schema** | [**Vec<crate::models::SchemaPeriodUiParameter>**](schema.UIParameter.md) |  | 
 **url** | Option<**String**> |  | [optional]
+**ux_plugins** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
 **version** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

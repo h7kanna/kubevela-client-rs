@@ -1,5 +1,5 @@
-use openapi::apis::*;
-use openapi::models::*;
+use kubevela::apis::*;
+use kubevela::models::*;
 
 fn main() {
   let mut kubevela_config = configuration::Configuration::default();

@@ -103,6 +103,7 @@ pub mod helm_api;
 pub mod oam_application_api;
 pub mod payload_types_api;
 pub mod pipeline_api;
+pub mod plugin_api;
 pub mod project_api;
 pub mod rbac_api;
 pub mod repository_api;

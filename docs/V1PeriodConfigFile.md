@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **docker_version** | Option<**String**> |  | [optional]
 **history** | Option<[**Vec<crate::models::V1PeriodHistory>**](v1.History.md)> |  | [optional]
 **os** | **String** |  | 
+**os_period_features** | Option<**Vec<String>**> |  | [optional]
 **os_period_version** | Option<**String**> |  | [optional]
 **rootfs** | [**crate::models::V1PeriodRootFs**](v1.RootFS.md) |  | 
 **variant** | Option<**String**> |  | [optional]

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **r#if** | Option<**String**> |  | [optional]
 **inputs** | Option<[**Vec<crate::models::V1alpha1PeriodInputItem>**](v1alpha1.InputItem.md)> |  | [optional]
 **meta** | Option<[**crate::models::V1alpha1PeriodWorkflowStepMeta**](v1alpha1.WorkflowStepMeta.md)> |  | [optional]
+**mode** | Option<**String**> |  | [optional]
 **name** | **String** |  | 
 **order_index** | **i32** |  | 
 **outputs** | Option<[**Vec<crate::models::V1alpha1PeriodOutputItem>**](v1alpha1.OutputItem.md)> |  | [optional]

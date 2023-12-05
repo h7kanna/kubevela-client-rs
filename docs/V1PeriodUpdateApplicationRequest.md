@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alias** | Option<**String**> |  | [optional]
+**annotations** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
 **description** | Option<**String**> |  | [optional]
 **icon** | Option<**String**> |  | [optional]
 **labels** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
