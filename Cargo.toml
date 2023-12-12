@@ -3,7 +3,7 @@ name = "kubevela"
 version = "1.9.7"
 authors = ["feedback@mail.kubevela.io"]
 description = "Kubevela api doc"
-license = "Apache License 2.0"
+license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
